@@ -11,7 +11,7 @@ export function RenderCards(){
             <div class="card h-100">
                 <img src="${p.image}" class="card-img-top" alt="${p.title}">
                 <div class="card-body">
-                    <h5 class="card-title">${p.title}</h5>
+                    <h5 class="card-title text-truncate">${p.title}</h5>
                 </div>
             </div>
         </div>

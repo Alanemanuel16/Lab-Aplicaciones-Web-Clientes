@@ -12,7 +12,6 @@ export function RenderCards(){
                 <img src="${p.image}" class="card-img-top" alt="${p.title}">
                 <div class="card-body">
                     <h5 class="card-title">${p.title}</h5>
-                    <p class="card-text">${p.description}</p>
                 </div>
             </div>
         </div>

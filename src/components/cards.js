@@ -1,4 +1,5 @@
 import { getProducts } from "../api.js";
+import { modal as Modal } from "./modal.js";
 export function RenderCards(){
     let productslist = document.querySelector('#products-list');
 
@@ -15,7 +16,7 @@ export function RenderCards(){
                 </div>
                 <div class="mb-3 text-center">
                 
-                    <button class="btn btn-dark"> Mas detalles</button>
+                    <button class="btn btn-dark" id="btn-${p.id}"> Mas detalles</button>
                 
                 </div>
             </div>
@@ -24,5 +25,15 @@ export function RenderCards(){
         });
     
             productslist.innerHTML = template;
+
+            //asignando eventos onclik a los botones
+            products.forEach((p) => {
+                let btn = document.querySelector(`#btn-${p.id}`);
+                btn.addEventListener('click', ()=>{
+                    Modal(p);
+
+            })
+
+        })
     });
 }

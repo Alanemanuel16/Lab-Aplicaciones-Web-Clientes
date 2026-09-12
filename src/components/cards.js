@@ -13,6 +13,11 @@ export function RenderCards(){
                 <div class="card-body" style="h-100">
                     <h5 class="card-title text-truncate">${p.title}</h5>
                 </div>
+                <div>
+                
+                    <button class="btn btn-dark"> Mas detalles</button>
+                
+                </div>
             </div>
         </div>
     `;

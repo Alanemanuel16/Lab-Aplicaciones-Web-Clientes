@@ -9,7 +9,7 @@ export function RenderCards(){
         template += `
         <div class="col">
             <div class="card h-100">
-                <img src="${p.image}" class="card-img-top" alt="${p.title}">
+                <img src="${p.image}" class="card-img-top" alt="${p.title}" style="height: 300px; width:250px ; objet-fit: contain;">
                 <div class="card-body">
                     <h5 class="card-title text-truncate">${p.title}</h5>
                 </div>

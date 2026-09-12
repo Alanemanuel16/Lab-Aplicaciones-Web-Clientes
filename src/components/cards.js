@@ -8,7 +8,7 @@ export function RenderCards(){
     products.forEach(p => {
         template += `
         <div class="col">
-            <div class="card h-100">
+            <div class="card justify-content-center aling item center h-100">
                 <img src="${p.image}" class="card-img-top" alt="${p.title}" style="height: 250px; width:195px ; objet-fit: contain;">
                 <div class="card-body">
                     <h5 class="card-title text-truncate">${p.title}</h5>

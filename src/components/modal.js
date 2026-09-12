@@ -2,7 +2,7 @@ export function modal(){
 
     let container = document.querySelector('#productModal');
 
-    
+
     let template = `
      <div class="modal-dialog">
     <div class="modal-content">
@@ -35,4 +35,10 @@ export function modal(){
     </div>
   </div>
   `;
+
+  container.innerHTML= template;
+
+  const bootstrapModal = new bootstrap.Modal(container);
+  bootstrapModal.show();
+
 }

@@ -15,10 +15,8 @@ export function Modal(p){
                         <img src="${p.image}" class="img-fluid rounded" alt="${p.title}">
                     </div>
                     <div class="col-md-8">
+                        <span class="badge text-bg-primary mb-2">$${p.price}</span>
                         <p class="card-text mb-0">${p.description}</p>
-                    </div>
-                    <div>
-                    <small>${prod.price}</small>
                     </div>
                 </div>
             </div>

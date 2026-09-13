@@ -15,12 +15,12 @@ export function Modal(p){
                         <img src="${p.image}" class="img-fluid rounded" alt="${p.title}">
                     </div>
                     <div class="col-md-8">
-                        <span class="badge text-bg-primary mb-2">$${p.price}</span>
                         <p class="card-text mb-0">${p.description}</p>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer d-flex">
+                <span class="badge text-bg-primary me-auto ms-1 mb-1 mt-1">$${p.price}</span>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar al carrito</button>
             </div>

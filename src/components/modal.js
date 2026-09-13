@@ -10,12 +10,11 @@ export function Modal(p){
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row g-3 align-items-center">
+                    <div class="row g-3 align-items-start">
                     <div class="col-md-4">
                         <img src="${p.image}" class="img-fluid rounded" alt="${p.title}">
                     </div>
                     <div class="col-md-8">
-                        <h5 class="card-title">${p.title}</h5>
                         <p class="card-text mb-0">${p.description}</p>
                     </div>
                 </div>

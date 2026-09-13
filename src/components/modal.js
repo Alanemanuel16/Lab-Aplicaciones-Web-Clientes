@@ -17,6 +17,9 @@ export function Modal(p){
                     <div class="col-md-8">
                         <p class="card-text mb-0">${p.description}</p>
                     </div>
+                    <div>
+                    <small>${prod.price}</small>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

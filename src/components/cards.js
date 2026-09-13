@@ -13,6 +13,7 @@ export function RenderCards(){
                 <img src="${p.image}" class="card-img-top img-fluid" alt="${p.title}" style="height: 180px; width: 100%; object-fit: contain; padding: 0.75rem;">
                 <div class="card-body" style="h-100">
                     <h5 class="card-title text-truncate">${p.title}</h5>
+                    <span class="badge text-bg-primary">$${p.price}</span>
                 </div>
                 <div class="mb-3 text-center">
                 

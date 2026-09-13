@@ -1,5 +1,5 @@
 import { getProducts } from "../api.js";
-import { modal as Modal } from "./modal.js";
+import { Modal } from "./modal.js";
 export function RenderCards(){
     let productslist = document.querySelector('#products-list');
 
@@ -30,6 +30,7 @@ export function RenderCards(){
             products.forEach((p) => {
                 let btn = document.querySelector(`#btn-${p.id}`);
                 btn.addEventListener('click', ()=>{
+                    console.log(`click en ${p.id}`);
                     Modal(p);
 
             })

@@ -20,7 +20,7 @@ export function Modal(p){
                 </div>
             </div>
             <div class="modal-footer d-flex">
-                <span class="badge text-bg-primary fs-6 me-auto ms-1 mb-1 mt-1">$${p.price}</span>
+                <span class="text-dark fw-semibold fs-6 me-auto ms-1 mb-1 mt-1">USD $${p.price}</span>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar al carrito</button>
             </div>

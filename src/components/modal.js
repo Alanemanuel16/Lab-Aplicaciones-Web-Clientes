@@ -1,3 +1,5 @@
+import { saveToLocalStorage } from "./storage/storage.js";
+
 export function Modal(p){
 
     let container = document.querySelector('#productModal');
@@ -22,7 +24,7 @@ export function Modal(p){
             <div class="modal-footer d-flex">
                 <span class="text-dark fw-semibold fs-6 me-auto ms-1 mb-1 mt-1">USD $${p.price}</span>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary" id="addToCartBtn-${p.id}" data-bs-dismiss="modal">Agregar al carrito</button>
             </div>
         </div>
     </div>
@@ -30,10 +32,10 @@ export function Modal(p){
 
   container.innerHTML = template;
 
-let btnAddToCart = document.querySelector(`#addToCartBtn-${getProducts.id}`);
+let btnAddToCart = document.querySelector(`#addToCartBtn-${p.id}`);
 btnAddToCart.addEventListener('click', () => {
-    console.log(`Product ${prod.id} agregado al carrito`);
-
+    saveToLocalStorage(p);
+    console.log(`Product ${p.id} agregado al carrito`);
 });
 
   const bootstrapModal = new bootstrap.Modal(container);

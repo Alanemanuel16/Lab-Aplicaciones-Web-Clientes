@@ -30,6 +30,12 @@ export function Modal(p){
 
   container.innerHTML = template;
 
+let btnAddToCart = document.querySelector(`#addToCartBtn-${getProducts.id}`);
+btnAddToCart.addEventListener('click', () => {
+    console.log(`Product ${prod.id} agregado al carrito`);
+
+});
+
   const bootstrapModal = new bootstrap.Modal(container);
   bootstrapModal.show();
 

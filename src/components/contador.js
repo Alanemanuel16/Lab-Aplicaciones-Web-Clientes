@@ -15,6 +15,11 @@ export function contador() {
 export function addEventListener(id){
     let btnIncrement = document.querySelector(`#incrementBtn-${id}`);
     let btnDecrement = document.querySelector(`#decrementBtn-${id}`);
-    let btnContador = document.querySelector(`#contrador-${id}`);
-
+    // let spanContador = document.querySelector(`#contrador-${id}`);
+    btnIncrement.addEventListener('click', ()=>{
+        console.log('click aumentar');
+    });
+    btnDecrement.addEventListener('click', ()=>{
+        console.log('click diminuir');
+    });
 }

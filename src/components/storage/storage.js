@@ -7,6 +7,13 @@ export function initLocalStorege(){
     }
 }
 
+
+export function getFromLocalStorage() {
+    return JASON.parse(localStorage.getItem(STORAGE_KEY));
+}
+
+
+
 export function saveToLocalStorage(item){
     let cart = getFromLocalStorage();
     cart.push(item);
@@ -14,6 +21,3 @@ export function saveToLocalStorage(item){
 }
 
 
-export function getFromLocalStorage() {
-    return JASON.parse(localStorage.getItem(STORAGE_KEY));
-}

@@ -22,7 +22,7 @@ export function addEventListener(id){
         spanContador.textContent = count;
     });
     btnDecrement.addEventListener('click', ()=>{
-        if (count > 0) {
+        if (count > 1) {
             count--;
             spanContador.textContent = count;
         }

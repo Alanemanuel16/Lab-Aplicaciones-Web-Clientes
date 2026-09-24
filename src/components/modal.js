@@ -1,4 +1,4 @@
-import { saveToLocalStorage } from "./storage/storage.js";
+import { saveToLocalStorage, getFromLocalStorage } from "./storage/storage.js";
 
 export function Modal(p){
 
@@ -35,7 +35,7 @@ export function Modal(p){
 let btnAddToCart = document.querySelector(`#addToCartBtn-${p.id}`);
 btnAddToCart.addEventListener('click', () => {
     saveToLocalStorage(p);
-    
+    console.log(`Product ${p.id} agregado al carrito`, getFromLocalStorage());
 });
 
   const bootstrapModal = new bootstrap.Modal(container);

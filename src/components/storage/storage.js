@@ -9,7 +9,14 @@ export function initLocalStorege(){
 
 
 export function getFromLocalStorage() {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (!data) return [];
+    try {
+        const parsed = JSON.parse(data);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+        return [];
+    }
 }
 
 

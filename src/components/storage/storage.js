@@ -3,13 +3,13 @@ const STORAGE_KEY = 'cart';
 
 export function initLocalStorege(){
     if (!localStorage.getItem(STORAGE_KEY)){
-        localStorage.setItem(STORAGE_KEY, JASON.stringify([]));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
     }
 }
 
 
 export function getFromLocalStorage() {
-    return JASON.parse(localStorage.getItem(STORAGE_KEY));
+    return JSON.parse(localStorage.getItem(STORAGE_KEY));
 }
 
 

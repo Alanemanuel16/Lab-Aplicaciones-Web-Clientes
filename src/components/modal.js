@@ -5,6 +5,9 @@ export function Modal(p){
 
     let container = document.querySelector('#productModal');
 
+    const existing = getFromLocalStorage().find(item => item.id === p.id);
+    const initialQtty = existing ? existing.qtty : 1;
+
     let template = `
      <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -21,7 +24,7 @@ export function Modal(p){
                         <p class="card-text mb-0">${p.description}</p>
                     </div>
                 </div>
-                ${contador(p.id)}
+                ${contador(p.id, initialQtty)}
             </div>
             <div class="modal-footer d-flex">
                 <span class="text-dark fw-semibold fs-6 me-auto ms-1 mb-1 mt-1">USD $${p.price}</span>
@@ -34,7 +37,7 @@ export function Modal(p){
 
   container.innerHTML = template;
 
-addEventListener(p.id);
+addEventListener(p.id, initialQtty);
 
 let btnAddToCart = document.querySelector(`#addToCartBtn-${p.id}`);
 btnAddToCart.addEventListener('click', () => {

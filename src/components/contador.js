@@ -1,0 +1,13 @@
+export function contador() {
+    let template = `
+    <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+        <button id="decrementBtn" class="btn btn-dark">-</button>
+        <div>
+            <p class="mb-0 fs-4"><span id="contador">0</span></p>
+        </div>
+        <button id="incrementBtn" class="btn btn-dark">+</button>
+    </div>
+    `;
+
+    return template;
+}

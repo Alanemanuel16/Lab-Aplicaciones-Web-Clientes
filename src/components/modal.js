@@ -1,4 +1,4 @@
-import { contador } from "./contador.js";
+import { contador, addEventListener } from "./contador.js";
 import { saveToLocalStorage, getFromLocalStorage } from "./storage/storage.js";
 
 export function Modal(p){
@@ -21,7 +21,7 @@ export function Modal(p){
                         <p class="card-text mb-0">${p.description}</p>
                     </div>
                 </div>
-                ${contador()}
+                ${contador(p.id)}
             </div>
             <div class="modal-footer d-flex">
                 <span class="text-dark fw-semibold fs-6 me-auto ms-1 mb-1 mt-1">USD $${p.price}</span>
@@ -33,6 +33,8 @@ export function Modal(p){
   `;
 
   container.innerHTML = template;
+
+addEventListener(p.id);
 
 let btnAddToCart = document.querySelector(`#addToCartBtn-${p.id}`);
 btnAddToCart.addEventListener('click', () => {

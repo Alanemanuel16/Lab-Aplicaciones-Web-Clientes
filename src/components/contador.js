@@ -1,4 +1,4 @@
-export function contador() {
+export function contador(id) {
     let template = `
     <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
         <button id="decrementBtn-${id}" class="btn btn-dark">-</button>
@@ -15,11 +15,16 @@ export function contador() {
 export function addEventListener(id){
     let btnIncrement = document.querySelector(`#incrementBtn-${id}`);
     let btnDecrement = document.querySelector(`#decrementBtn-${id}`);
-    // let spanContador = document.querySelector(`#contrador-${id}`);
+    let spanContador = document.querySelector(`#contador-${id}`);
+    let count = 0;
     btnIncrement.addEventListener('click', ()=>{
-        console.log('click aumentar');
+        count++;
+        spanContador.textContent = count;
     });
     btnDecrement.addEventListener('click', ()=>{
-        console.log('click diminuir');
+        if (count > 0) {
+            count--;
+            spanContador.textContent = count;
+        }
     });
 }

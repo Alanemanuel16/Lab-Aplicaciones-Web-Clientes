@@ -11,3 +11,10 @@ export function contador() {
 
     return template;
 }
+
+export function addEventListener(id){
+    let btnIncrement = document.querySelector(`#incrementBtn-${id}`);
+    let btnDecrement = document.querySelector(`#decrementBtn-${id}`);
+    let btnContador = document.querySelector(`#contrador-${id}`);
+
+}

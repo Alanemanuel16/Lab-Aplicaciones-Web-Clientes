@@ -35,7 +35,11 @@ export function Modal(p){
 let btnAddToCart = document.querySelector(`#addToCartBtn-${p.id}`);
 btnAddToCart.addEventListener('click', () => {
     saveToLocalStorage(p);
-    console.log(`Product ${p.id} agregado al carrito`, getFromLocalStorage());
+    const cart = getFromLocalStorage();
+    document.querySelector('#cartCount').textContent = cart.length;
+    const toast = new bootstrap.Toast(document.querySelector('#cartToast'));
+    toast.show();
+    console.log(`Product ${p.id} agregado al carrito`, cart);
 });
 
   const bootstrapModal = new bootstrap.Modal(container);

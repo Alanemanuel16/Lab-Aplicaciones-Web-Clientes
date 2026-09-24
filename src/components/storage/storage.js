@@ -2,7 +2,17 @@ const STORAGE_KEY = 'cart';
 
 
 export function initLocalStorege(){
-    if (!localStorage.getItem(STORAGE_KEY)){
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (!data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+        return;
+    }
+    try {
+        const parsed = JSON.parse(data);
+        if (!Array.isArray(parsed)) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+        }
+    } catch (e) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
     }
 }

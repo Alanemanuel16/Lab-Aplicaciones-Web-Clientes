@@ -38,7 +38,9 @@ addEventListener(p.id);
 
 let btnAddToCart = document.querySelector(`#addToCartBtn-${p.id}`);
 btnAddToCart.addEventListener('click', () => {
-    saveToLocalStorage(p);
+    const quantity = parseInt(document.querySelector(`#contador-${p.id}`).textContent) || 1;
+    const product = { ...p, qtty: quantity };
+    saveToLocalStorage(product);
     const cart = getFromLocalStorage();
     document.querySelector('#cartCount').textContent = cart.length;
     const toast = new bootstrap.Toast(document.querySelector('#cartToast'));

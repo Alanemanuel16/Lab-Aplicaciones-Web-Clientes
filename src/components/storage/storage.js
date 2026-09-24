@@ -6,3 +6,14 @@ export function initLocalStorege(){
         localStorage.setItem(STORAGE_KEY, JASON.stringify([]));
     }
 }
+
+export function saveToLocalStorage(item){
+    let cart = getFromLocalStorage();
+    cart.push(item);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+}
+
+
+export function getFromLocalStorage() {
+    return JASON.parse(localStorage.getItem(STORAGE_KEY));
+}

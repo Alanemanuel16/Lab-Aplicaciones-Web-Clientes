@@ -1,12 +1,22 @@
 export const CATEGORIES = [
-  { label: "Bolsos", keywords: ["bag"] },
-  { label: "Remeras", keywords: ["t-shirt", "shirt", "slim fit", "moisture wicking", "tank"] },
-  { label: "Chaquetas", keywords: ["jacket"] },
-  { label: "Anillos", keywords: ["ring", "micropave", "pierced", "pendant", "necklace", "jewellery", "jewelery"] },
-  { label: "Monitores", keywords: ["monitor", "acer", "full hd", "curved", " 27", " 24", " sbi"] },
-  { label: "SSD", keywords: ["ssd", "sandisk"] },
-  { label: "Auriculares", keywords: ["headphones", "airpods", "earbuds", "sound"] },
-  { label: "Zapatillas", keywords: ["shoes", "nike", "sneakers", "timberland", "air force"] },
-  { label: "Jeans", keywords: ["jeans", "stretch", "casual slim"] },
-  { label: "Perfumes", keywords: ["perfume", "fragrance"] },
+  { label: "Bolsos" },
+  { label: "Remeras" },
+  { label: "Chaquetas" },
+  { label: "Anillos" },
+  { label: "Monitores" },
+  { label: "SSD" },
 ];
+
+export function categoryForProduct(product) {
+    const title = product.title.toLowerCase();
+    const category = product.category.toLowerCase();
+
+    if (title.includes('ssd') || title.includes('hard drive') || title.includes('gaming drive')) return 'SSD';
+    if (title.includes('backpack')) return 'Bolsos';
+    if (title.includes('jacket')) return 'Chaquetas';
+    if (title.includes('monitor')) return 'Monitores';
+    if (category === 'jewelery') return 'Anillos';
+    if (title.includes('shirt') || title.includes('t-shirt') || title.includes('boat neck') || title.includes('moisture') || title.includes('tee')) return 'Remeras';
+    if (category === "men's clothing" || category === "women's clothing") return 'Remeras';
+    return null;
+}

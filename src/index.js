@@ -8,6 +8,7 @@ RenderCards();
 RenderCart();
 populateCategories();
 setupSearch();
+setupNav();
 
 function populateCategories() {
     const menu = document.querySelector('#categoriesMenu');
@@ -34,5 +35,23 @@ function setupSearch() {
 
     input.addEventListener('input', () => {
         filterBySearch(input.value);
+    });
+}
+
+function setupNav() {
+    const navProductos = document.querySelector('#navProductos');
+    if (!navProductos) return;
+
+    navProductos.addEventListener('click', (e) => {
+        e.preventDefault();
+        const input = document.querySelector('#searchInput');
+        if (input) input.value = '';
+        filterBySearch('');
+        filterByCategory(null);
+
+        document.querySelector('#productos').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
     });
 }

@@ -1,6 +1,6 @@
 import { getProducts } from "./services/api.js";
 import { Modal } from "./modal.js";
-import { CATEGORIES } from "./categories.js";
+import { categoryForProduct } from "./categories.js";
 
 let products = [];
 
@@ -58,12 +58,7 @@ export function filterByCategory(label) {
         renderList(products);
         return;
     }
-    const cat = CATEGORIES.find(c => c.label === label);
-    if (!cat) return;
-    const filtered = products.filter(p => {
-        const t = p.title.toLowerCase();
-        return cat.keywords.some(k => t.includes(k));
-    });
+    const filtered = products.filter(p => categoryForProduct(p) === label);
     renderList(filtered);
 }
 

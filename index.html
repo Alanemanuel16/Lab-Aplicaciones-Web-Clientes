@@ -13,14 +13,14 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid" style="padding-right: 0;">
     <a class="navbar-brand" href="#">BOSTON</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
@@ -30,18 +30,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contacto</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-        <li>
-          <button class="btn btn-outline-dark border-0 position-relative" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-        <i class="bi bi-basket3-fill fs-4"></i>
-        <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-          </button>
-        </li>
       </ul>
-
+      <button class="btn btn-outline-dark border-0 position-relative me-4" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <i class="bi bi-basket3-fill fs-4"></i>
+    <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </button>
     </div>
   </div>
 </nav>

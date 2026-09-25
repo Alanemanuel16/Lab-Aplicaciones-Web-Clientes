@@ -48,6 +48,22 @@ export function removeFromLocalStorage(itemID) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 }
 
+export function updateQuantityLocalStorage(itemID, delta) {
+    let cart = getFromLocalStorage();
+    const idx = cart.findIndex(el => el.id === itemID);
+    if (idx !== -1) {
+        cart[idx].qtty += delta;
+        if (cart[idx].qtty <= 0) {
+            cart.splice(idx, 1);
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    }
+}
+
+export function clearLocalStorage() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+}
+
 export function updateItemStorage(itemID, qtty) {
     let dataStorage = getFromLocalStorage();
     let idx = dataStorage.findIndex((p) => p.id === itemID);

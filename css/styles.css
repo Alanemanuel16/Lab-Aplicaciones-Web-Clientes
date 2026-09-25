@@ -4,3 +4,11 @@
   font-weight: 500;
   font-style: normal;
 }
+
+.navbar-nav .nav-link {
+  font-size: 1.35rem;
+}
+
+.navbar-nav {
+  column-gap: 1.5rem;
+}

@@ -1,4 +1,5 @@
 import { getFromLocalStorage, removeFromLocalStorage } from "./storage/storage.js";
+import { RenderCartList } from "./cartList.js";
 
 export function RenderCart() {
     const container = document.querySelector('#cart-container');
@@ -12,29 +13,14 @@ export function RenderCart() {
 
     let total = 0;
     let totalQtty = 0;
-    let template = `<ul class="list-group list-group-flush">`;
 
     cart.forEach(item => {
-        const subtotal = item.price * item.qtty;
-        total += subtotal;
+        total += item.price * item.qtty;
         totalQtty += item.qtty;
-        template += `
-        <li class="list-group-item d-flex align-items-center gap-3">
-            <img src="${item.image}" alt="${item.title}" style="width: 50px; height: 50px; object-fit: contain;">
-            <div class="flex-grow-1">
-                <h6 class="mb-0 text-truncate">${item.title}</h6>
-                <small class="text-dark fw-semibold">USD $${item.price} x ${item.qtty}</small>
-            </div>
-            <strong>USD $${subtotal.toFixed(2)}</strong>
-            <button class="btn btn-outline-danger btn-sm" data-remove="${item.id}">Quitar</button>
-        </li>
-        `;
     });
 
-    template += `</ul>
+    container.innerHTML = RenderCartList(cart) + `
     <h5 class="mt-3 mb-0">Total: USD $${total.toFixed(2)}</h5>`;
-
-    container.innerHTML = template;
     updateBadge(totalQtty);
 
     cart.forEach(item => {

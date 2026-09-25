@@ -15,20 +15,20 @@
     <header>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid" style="padding-right: 0;">
-    <a class="navbar-brand" href="#">BOSTON</a>
+    <a class="navbar-brand" id="navBrand" href="#">BOSTON</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link active" id="navInicio" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="navProductos" href="#productos">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
+          <a class="nav-link" id="navContacto" href="#contacto">Contacto</a>
         </li>
       </ul>
       <div class="d-flex align-items-center gap-2 ms-3 me-auto">
@@ -63,6 +63,50 @@
 
 </div>
 
+      <section id="contacto" class="mt-5 mb-5 d-none">
+        <div class="row g-4">
+          <div class="col-md-5">
+            <ul class="list-unstyled d-flex flex-column gap-3">
+              <li class="d-flex align-items-center gap-3">
+                <i class="bi bi-whatsapp fs-3 text-success"></i>
+                <span class="fs-5">+54 11 1234-5678</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="bi bi-telephone fs-4 text-dark"></i>
+                <span class="fs-5">+54 11 8765-4321</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="bi bi-clock fs-4 text-dark"></i>
+                <span class="fs-5">Lunes a Viernes de 9 a 18hs</span>
+              </li>
+            </ul>
+            <div class="bg-success text-white text-center rounded-3 py-3 fw-semibold fs-5 mt-4">
+              Escribenos por WhatsApp
+            </div>
+          </div>
+          <div class="col-md-7">
+            <form class="d-flex flex-column gap-3">
+              <div>
+                <label for="contactName" class="form-label">Tu nombre</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Escribe tu nombre...">
+              </div>
+              <div>
+                <label for="contactEmail" class="form-label">Tu correo electronico</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="Escribe tu correo electronico...">
+              </div>
+              <div>
+                <label for="contactSubject" class="form-label">Asunto</label>
+                <input type="text" class="form-control" id="contactSubject" placeholder="Escribe el asunto...">
+              </div>
+              <div>
+                <label for="contactMessage" class="form-label">Tu mensaje (opcional)</label>
+                <textarea class="form-control" id="contactMessage" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <!-- Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
 </div>
@@ -80,8 +124,8 @@
     </div>
 </div>
     </main>
-    <footer>
-        <p>&copy; 2026: Derechos de BOSTON</p>
+    <footer class="text-center py-3">
+        <p class="mb-0">&copy; 2026: Derechos de BOSTON</p>
     </footer>
 
     <!-- Offcanvas carrito -->

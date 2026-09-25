@@ -4,11 +4,21 @@ import { categoryForProduct } from "./categories.js";
 
 let products = [];
 
+const EXTRA_MONITOR = {
+    id: 99,
+    title: "HP 24mh FHD Monitor - 23.8 Inches",
+    price: 139,
+    description: "23.8 inches Full HD 1080p IPS LED monitor with VA panel, micro-edge display and AMD FreeSync technology for smooth gaming and everyday work.",
+    category: "electronics",
+    image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    rating: { rate: 4.4, count: 210 }
+};
+
 export function RenderCards() {
     let productslist = document.querySelector('#products-list');
 
     getProducts().then((data) => {
-        products = data;
+        products = [...data, EXTRA_MONITOR];
         renderList(products);
     });
 }

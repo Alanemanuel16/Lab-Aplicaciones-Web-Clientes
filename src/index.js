@@ -40,18 +40,66 @@ function setupSearch() {
 
 function setupNav() {
     const navProductos = document.querySelector('#navProductos');
-    if (!navProductos) return;
-
-    navProductos.addEventListener('click', (e) => {
-        e.preventDefault();
-        const input = document.querySelector('#searchInput');
-        if (input) input.value = '';
-        filterBySearch('');
-        filterByCategory(null);
-
-        document.querySelector('#productos').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
+    if (navProductos) {
+        navProductos.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSection('products');
+            resetFilters();
+            document.querySelector('#productos').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
         });
-    });
+    }
+
+    const navContacto = document.querySelector('#navContacto');
+    if (navContacto) {
+        navContacto.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSection('contact');
+            document.querySelector('#contacto').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        });
+    }
+
+    const navInicio = document.querySelector('#navInicio');
+    if (navInicio) {
+        navInicio.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSection('products');
+            resetFilters();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    const navBrand = document.querySelector('#navBrand');
+    if (navBrand) {
+        navBrand.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSection('products');
+            resetFilters();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+}
+
+function showSection(section) {
+    const products = document.querySelector('#products-list');
+    const contact = document.querySelector('#contacto');
+    if (section === 'contact') {
+        products.classList.add('d-none');
+        contact.classList.remove('d-none');
+    } else {
+        contact.classList.add('d-none');
+        products.classList.remove('d-none');
+    }
+}
+
+function resetFilters() {
+    const input = document.querySelector('#searchInput');
+    if (input) input.value = '';
+    filterBySearch('');
+    filterByCategory(null);
 }

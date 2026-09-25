@@ -20,7 +20,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav mx-auto flex-row justify-content-center ps-4 ps-lg-0">
         <li class="nav-item">
           <a class="nav-link active" id="navInicio" aria-current="page" href="#">Inicio</a>
         </li>
@@ -31,24 +31,31 @@
           <a class="nav-link" id="navContacto" href="#contacto">Contacto</a>
         </li>
       </ul>
-      <div class="d-flex align-items-center gap-2 ms-3 me-auto">
-        <div class="position-relative">
-          <i class="bi bi-search position-absolute top-50 translate-middle-y ms-2 text-secondary"></i>
-          <input id="searchInput" class="form-control" type="search" placeholder="Buscar..." style="width: 190px; padding-left: 2.1rem;">
+      <div class="d-flex flex-nowrap align-items-center gap-2 ms-3 me-3 ms-lg-3 me-lg-4">
+        <div class="d-flex align-items-center gap-2">
+          <div class="position-relative">
+            <i class="bi bi-search position-absolute top-50 translate-middle-y ms-2 text-secondary"></i>
+            <input id="searchInput" class="form-control" type="search" placeholder="Buscar tus productos..." style="padding-left: 2.1rem;">
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
+            </button>
+            <ul class="dropdown-menu" id="categoriesMenu">
+              <li><a class="dropdown-item" href="#">Todos</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="dropdown">
-          <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorias
-          </button>
-          <ul class="dropdown-menu" id="categoriesMenu">
-            <li><a class="dropdown-item" href="#">Todos</a></li>
-          </ul>
-        </div>
-      </div>
-      <button class="btn btn-outline-dark border-0 position-relative me-4" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <button class="btn btn-outline-dark border-0 position-relative ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <i class="bi bi-basket3-fill fs-4"></i>
     <span id="cartBadge" class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </button>
+      </div>
+      <button class="btn btn-outline-dark border-0 position-relative me-4 d-none d-lg-inline-block" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <i class="bi bi-basket3-fill fs-4"></i>
+    <span id="cartBadgeDesktop" class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">0</span>
       </button>
     </div>
   </div>

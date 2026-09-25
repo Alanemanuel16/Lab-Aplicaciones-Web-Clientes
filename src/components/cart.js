@@ -75,6 +75,10 @@ function updateBadge(totalQtty) {
     if (badge) {
         badge.textContent = totalQtty;
     }
+    const badgeDesktop = document.querySelector('#cartBadgeDesktop');
+    if (badgeDesktop) {
+        badgeDesktop.textContent = totalQtty;
+    }
     const cartCount = document.querySelector('#cartCount');
     if (cartCount) {
         cartCount.textContent = getFromLocalStorage().length;

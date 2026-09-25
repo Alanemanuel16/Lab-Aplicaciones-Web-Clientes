@@ -10,5 +10,19 @@
 }
 
 .navbar-nav {
-  column-gap: 1.5rem;
+  gap: 0.25rem 0.75rem;
+}
+
+#searchInput {
+  width: 150px;
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    gap: 1rem 1.5rem;
+  }
+
+  #searchInput {
+    width: 190px;
+  }
 }

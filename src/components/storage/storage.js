@@ -42,6 +42,12 @@ export function saveToLocalStorage(item){
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 }
 
+export function removeFromLocalStorage(itemID) {
+    let cart = getFromLocalStorage();
+    cart = cart.filter(el => el.id !== itemID);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+}
+
 export function updateItemStorage(itemID, qtty) {
     let dataStorage = getFromLocalStorage();
     let idx = dataStorage.findIndex((p) => p.id === itemID);

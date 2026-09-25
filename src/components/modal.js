@@ -1,5 +1,6 @@
 import { contador, addEventListener } from "./contador.js";
 import { saveToLocalStorage, getFromLocalStorage } from "./storage/storage.js";
+import { RenderCart } from "./cart.js";
 
 export function Modal(p){
 
@@ -49,6 +50,7 @@ btnAddToCart.addEventListener('click', () => {
     const toast = new bootstrap.Toast(document.querySelector('#cartToast'));
     toast.show();
     console.log(`Product ${p.id} agregado al carrito`, cart);
+    RenderCart();
 });
 
   const bootstrapModal = new bootstrap.Modal(container);

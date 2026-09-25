@@ -31,10 +31,24 @@
           <a class="nav-link" href="#">Contacto</a>
         </li>
       </ul>
+      <div class="d-flex align-items-center gap-2 ms-3">
+        <div class="position-relative">
+          <i class="bi bi-search position-absolute top-50 translate-middle-y ms-2 text-secondary"></i>
+          <input id="searchInput" class="form-control" type="search" placeholder="Buscar..." style="width: 190px; padding-left: 2.1rem;">
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </button>
+          <ul class="dropdown-menu" id="categoriesMenu">
+            <li><a class="dropdown-item" href="#">Todos</a></li>
+          </ul>
+        </div>
+      </div>
       <button class="btn btn-outline-dark border-0 position-relative me-4" type="button" data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <i class="bi bi-basket3-fill fs-4"></i>
-    <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+    <span id="cartBadge" class="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-danger">0</span>
       </button>
     </div>
   </div>
@@ -43,10 +57,7 @@
 
     <main class="container">
 
-      <input type="text" name="Search" id="" value="Search"></input>
-
-
-       <div class="row row-cols-1 row-cols-md-4 g-4 mt-4"  id="products-list">
+      <div class="row row-cols-1 row-cols-md-4 g-4 mt-4"  id="products-list">
                 <!--generado desde js--> 
 
 

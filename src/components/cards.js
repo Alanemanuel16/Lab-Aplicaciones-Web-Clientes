@@ -1,12 +1,29 @@
 import { getProducts } from "./services/api.js";
 import { Modal } from "./modal.js";
-export function RenderCards(){
+import { CATEGORIES } from "./categories.js";
+
+let products = [];
+
+export function RenderCards() {
     let productslist = document.querySelector('#products-list');
 
-    getProducts().then((products) => {
-        let template = ``;
-    
-    products.forEach(p => {
+    getProducts().then((data) => {
+        products = data;
+        renderList(products);
+    });
+}
+
+function renderList(list) {
+    let productslist = document.querySelector('#products-list');
+
+    if (list.length === 0) {
+        productslist.innerHTML = `<div class="col-12"><p class="text-muted text-center">No se encontraron productos.</p></div>`;
+        return;
+    }
+
+    let template = ``;
+
+    list.forEach(p => {
         template += `
         <div class="col">
             <div class="card justify-content-center aling item center h-100">
@@ -23,19 +40,45 @@ export function RenderCards(){
             </div>
         </div>
     `;
-        });
-    
-            productslist.innerHTML = template;
-
-            //asignando eventos onclik a los botones
-            products.forEach((p) => {
-                let btn = document.querySelector(`#btn-${p.id}`);
-                btn.addEventListener('click', ()=>{
-                    console.log(`click en ${p.id}`);
-                    Modal(p);
-
-            })
-
-        })
     });
+
+    productslist.innerHTML = template;
+
+    list.forEach((p) => {
+        let btn = document.querySelector(`#btn-${p.id}`);
+        btn.addEventListener('click', () => {
+            console.log(`click en ${p.id}`);
+            Modal(p);
+        });
+    });
+}
+
+export function filterByCategory(label) {
+    if (!label) {
+        renderList(products);
+        return;
+    }
+    const cat = CATEGORIES.find(c => c.label === label);
+    if (!cat) return;
+    const filtered = products.filter(p => {
+        const t = p.title.toLowerCase();
+        return cat.keywords.some(k => t.includes(k));
+    });
+    renderList(filtered);
+}
+
+export function filterBySearch(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) {
+        renderList(products);
+        return;
+    }
+    const filtered = products.filter(p =>
+        p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+    );
+    renderList(filtered);
+}
+
+export function getProductsList() {
+    return products;
 }
